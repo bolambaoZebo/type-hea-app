@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import swr from 'swr';
 
 function TypeHead() {
   const [state, setState] = useState({
