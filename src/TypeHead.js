@@ -17,16 +17,16 @@ function TypeHead() {
     axios.get(`https://api.github.com/users/${state.input}`).then(resp => {
       console.log(resp)
     })
-    // state.input && axios.get(`https://api.github.com/users/${state.input}`)
-    //   .then(resp => {
-    //     const { avatar_url, login } = resp.data;
-    //     setState({ ...state, user: { avatar_url, login }, error: false })
-    //     console.log(avatar_url)
-    //   })
-    //   .catch(e => {
-    //     setState({...state, error: true})
-    //     console.log('error', e.message)
-    //   })
+    state.input && axios.get(`https://api.github.com/users/${state.input}`)
+      .then(resp => {
+        const { avatar_url, login } = resp.data;
+        setState({ ...state, user: { avatar_url, login }, error: false })
+        console.log(avatar_url)
+      })
+      .catch(e => {
+        setState({...state, error: true})
+        console.log('error', e.message)
+      })
   }, [state.input])
 
 
